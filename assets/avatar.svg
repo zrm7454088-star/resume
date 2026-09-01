@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" role="img" aria-label="曾睿铭头像">
+  <!-- 头像：水墨中国风 × 深海 —— 墨蓝底 + 青碧渐变 + 朱砂印章缩写 -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0e16"/>
+      <stop offset="0.5" stop-color="#0f1a2e"/>
+      <stop offset="1" stop-color="#132236"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7fc4de"/>
+      <stop offset="0.55" stop-color="#3fb9b0"/>
+      <stop offset="1" stop-color="#2f6f8a"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.42" r="0.55">
+      <stop offset="0" stop-color="#3fb9b0" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#3fb9b0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="320" height="320" fill="url(#bg)"/>
+
+  <!-- 水墨晕染（深海光斑） -->
+  <circle cx="160" cy="140" r="150" fill="url(#halo)"/>
+  <circle cx="160" cy="140" r="128" fill="#6fb0d2" opacity="0.07"/>
+  <circle cx="90" cy="80" r="72" fill="#3fb9b0" opacity="0.09"/>
+  <circle cx="250" cy="266" r="86" fill="#c9603f" opacity="0.06"/>
+
+  <!-- 背景网格（淡，似宣纸帘纹） -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <path d="M0 80 H320 M0 160 H320 M0 240 H320"/>
+    <path d="M80 0 V320 M160 0 V320 M240 0 V320"/>
+  </g>
+
+  <!-- 抽象头像：圆 + 肩部轮廓 -->
+  <circle cx="160" cy="118" r="52" fill="url(#accent)" opacity="0.96"/>
+  <path d="M70 320c6-58 40-88 90-88s84 30 90 88Z" fill="#ffffff" opacity="0.10"/>
+
+  <!-- 缩写（衬线字） -->
+  <text x="160" y="214" text-anchor="middle" font-family="Georgia, 'Times New Roman', SimSun, serif" font-size="34" font-weight="700" fill="#ffffff" letter-spacing="4">ZRM</text>
+  <text x="160" y="240" text-anchor="middle" font-family="Consolas, monospace" font-size="12" fill="#8fc2d6" letter-spacing="3">ZENG RUI MING</text>
+
+  <!-- 朱砂印章（右下角） -->
+  <rect x="250" y="250" width="42" height="42" rx="5" fill="#c9603f" opacity="0.94"/>
+  <text x="271" y="280" text-anchor="middle" font-family="'STSong', SimSun, serif" font-size="24" fill="#fff7f0">铭</text>
+</svg>

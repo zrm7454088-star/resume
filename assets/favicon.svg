@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="favicon">
+  <!-- 站点图标：朱砂印章「铭」 -->
+  <defs>
+    <linearGradient id="seal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9714f"/>
+      <stop offset="1" stop-color="#b34a33"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="10" fill="url(#seal)"/>
+  <rect x="5" y="5" width="54" height="54" rx="7" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"/>
+  <text x="32" y="44" text-anchor="middle" font-family="'STSong', SimSun, serif" font-size="34" fill="#fff7f0">铭</text>
+</svg>

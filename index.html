@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="曾睿铭 Zeng Rui Ming · AI 应用开发者 / 通信工程 · 在线个人简历" />
+  <meta name="theme-color" content="#0a0f1c" />
+  <title>曾睿铭 · Zeng Rui Ming — 在线简历</title>
+
+  <!-- 无 JS 时保持内容可见：仅在有 JS 时启用入场动画 -->
+  <script>document.documentElement.classList.add("js");</script>
+
+  <!-- 站点图标 -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- 样式表 -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- 顶部阅读进度条 -->
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+  <!-- 光标光晕（深海浮光） -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- ============ 导航栏 ============ -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav container" aria-label="主导航">
+      <a class="nav-brand" href="#top" aria-label="返回顶部">
+        <img class="brand-seal" src="assets/favicon.svg" alt="" width="30" height="30" loading="lazy" />
+        <span class="brand-name">Z<span class="brand-dot">·</span>RUI&nbsp;MING</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a class="nav-link" href="#about">关于</a></li>
+        <li><a class="nav-link" href="#skills">技能</a></li>
+        <li><a class="nav-link" href="#projects">项目</a></li>
+        <li><a class="nav-link" href="#service">我能做什么</a></li>
+        <li><a class="nav-link" href="#certs">证书</a></li>
+        <li><a class="nav-link" href="#hobby">兴趣</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- 主题切换 -->
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换深浅主题" title="切换深浅主题">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M12 2.6v2.4M12 19v2.4M2.6 12H5M19 12h2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"
+              stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path d="M20.5 14.2A8.4 8.4 0 0 1 9.8 3.5a8.4 8.4 0 1 0 10.7 10.7Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <!-- 移动端汉堡按钮 -->
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="打开菜单" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ============ Hero 首屏 ============ -->
+    <section class="hero" id="hero">
+      <!-- 深海水墨粒子画布 -->
+      <canvas class="ink-canvas" id="inkCanvas" aria-hidden="true"></canvas>
+
+      <!-- 视差水墨层 -->
+      <div class="hero-layer layer-far" aria-hidden="true"></div>
+      <div class="hero-layer layer-near" aria-hidden="true"></div>
+
+      <!-- 侧边竖排装饰文字（水墨留白）：左列诗文 + 落款，风格与右列一致 -->
+      <div class="hero-vertical hero-vertical--left" aria-hidden="true">
+        <span class="hero-vertical-line">纵有疾风起，人生不言弃</span>
+        <span class="hero-vertical-line hero-vertical-line--end">致远</span>
+      </div>
+      <p class="hero-vertical hero-vertical--right" aria-hidden="true">君子生非异也 善假于物也</p>
+
+      <div class="hero-inner container">
+        <p class="hero-kicker reveal">PERSONAL PORTFOLIO · 在线简历</p>
+
+        <h1 class="hero-title reveal">
+          <span class="hero-name-cn">曾睿铭</span>
+          <span class="hero-name-en">Zeng&nbsp;Rui&nbsp;Ming</span>
+        </h1>
+
+        <p class="hero-role reveal">
+          <span class="role-seal" aria-hidden="true">铭</span>
+          AI 应用开发者&nbsp;/&nbsp;通信工程
+        </p>
+
+        <!-- 打字机标语 -->
+        <p class="hero-tagline reveal">
+          <span class="typewriter" id="typewriter" aria-live="polite"></span><span class="caret" aria-hidden="true">|</span>
+        </p>
+
+        <!-- 联系方式 -->
+        <ul class="hero-contact reveal">
+          <li>
+            <a href="mailto:3681961857@qq.com">
+              <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Zm0 2 8 5 8-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              3681961857@qq.com
+            </a>
+          </li>
+          <li>
+            <a href="tel:+8619820602725">
+              <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M6.6 3.5c.6 0 1.1.4 1.3 1l1 3.2c.2.6 0 1.2-.4 1.6l-1.3 1.3a13 13 0 0 0 6.2 6.2l1.3-1.3c.4-.4 1-.6 1.6-.4l3.2 1c.6.2 1 .7 1 1.3v2.3c0 .8-.7 1.5-1.5 1.4C10.4 20.4 3.6 13.6 3 4.9 2.9 4.1 3.6 3.5 4.4 3.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              198 2060 2725
+            </a>
+          </li>
+          <li>
+            <span>
+              <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 21s-6.5-5.2-6.5-10A6.5 6.5 0 0 1 12 4.5 6.5 6.5 0 0 1 18.5 11c0 4.8-6.5 10-6.5 10Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+              广东 · 江门
+            </span>
+          </li>
+          <li>
+            <a href="https://github.com/zrm7454088-star" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.4-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              github.com/zrm7454088-star
+            </a>
+          </li>
+        </ul>
+
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="#projects">查看项目</a>
+          <a class="btn btn-ghost" href="#service">我能为你做什么 →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 01 关于我 ============ -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-num">01</span>
+          <h2 class="section-title">关于我</h2>
+          <p class="section-sub">ABOUT · 把 AI 真正「用起来」的人</p>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-media reveal">
+            <figure class="avatar-wrap">
+              <!-- 图片懒加载：头像 SVG -->
+              <img class="avatar" src="assets/avatar.svg" alt="曾睿铭的头像" width="320" height="320" loading="lazy" decoding="async" />
+              <span class="avatar-ring" aria-hidden="true"></span>
+            </figure>
+            <p class="about-quote">「Be humble.」</p>
+          </div>
+
+          <div class="about-body reveal">
+            <p class="about-lead">
+              我是曾睿铭，<strong>五邑大学通信工程专业</strong>在读学生，一名对「把 AI 落到生产与生活」充满热情的开发者。
+            </p>
+            <p>
+              相比追逐参数，我更关心<strong>模型怎么跑起来、怎么接入自己的工作流</strong>：本地部署开源大模型、搭私有知识库、
+              用 AI 辅助写代码、生成演示文稿、搭建个人网站——这些事我都亲自做过，并持续打磨成可复用的方法。
+            </p>
+            <p>
+              我的风格是<strong>克制而务实</strong>：选对工具、控制成本、把复杂的东西做得简单好用。
+              如果你也在探索「AI 如何真正帮到自己」，希望这份简历能让你认识我。
+            </p>
+
+            <ul class="info-list">
+              <li><span class="info-key">学校</span><span class="info-val">五邑大学</span></li>
+              <li><span class="info-key">专业</span><span class="info-val">通信工程</span></li>
+              <li><span class="info-key">年级</span><span class="info-val">2026 级本科在读</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 02 专业技能 ============ -->
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-num">02</span>
+          <h2 class="section-title">专业技能</h2>
+          <p class="section-sub">SKILLS · 工具是舟，渡人自渡</p>
+        </header>
+
+        <div class="skills-grid">
+          <!-- 技能卡片：大模型 & AI -->
+          <article class="skill-card reveal">
+            <div class="skill-card-head">
+              <svg class="skill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a7 7 0 0 0-4 12.7V18a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 21h6M12 18v3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <div>
+                <h3>大模型 &amp; AI 应用</h3>
+                <span class="skill-tagline">核心</span>
+              </div>
+            </div>
+            <ul class="skill-list">
+              <li>本地部署：Ollama / LM Studio / llama.cpp</li>
+              <li>RAG 私有知识库 · 提示词工程</li>
+              <li>AI Coding：Copilot / 本地模型辅助编程</li>
+            </ul>
+          </article>
+
+          <!-- 技能卡片：前端 -->
+          <article class="skill-card reveal">
+            <div class="skill-card-head">
+              <svg class="skill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18v14H3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3 8h18M8 8v10" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7 12h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <div>
+                <h3>前端开发</h3>
+              </div>
+            </div>
+            <ul class="skill-list">
+              <li>HTML5 / CSS3（响应式、动画）</li>
+              <li>JavaScript / TypeScript</li>
+              <li>React · Tailwind CSS</li>
+            </ul>
+          </article>
+
+          <!-- 技能卡片：后端 & 工具 -->
+          <article class="skill-card reveal">
+            <div class="skill-card-head">
+              <svg class="skill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M5 9h14M9 9v10" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+              <div>
+                <h3>后端 &amp; 工具</h3>
+              </div>
+            </div>
+            <ul class="skill-list">
+              <li>Python · Node.js · FastAPI</li>
+              <li>Git · Linux · Docker 基础</li>
+              <li>演示文稿 / 文档自动化</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- 技能进度条 -->
+        <div class="bars reveal">
+          <div class="bar">
+            <div class="bar-head"><span>AI 应用落地</span><span class="bar-pct" data-pct="90">90%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="90%"></div></div>
+          </div>
+          <div class="bar">
+            <div class="bar-head"><span>前端 / 全栈</span><span class="bar-pct" data-pct="80">80%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="80%"></div></div>
+          </div>
+          <div class="bar">
+            <div class="bar-head"><span>演示与表达</span><span class="bar-pct" data-pct="85">85%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="85%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 03 项目经历 ============ -->
+    <section class="section" id="projects">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-num">03</span>
+          <h2 class="section-title">项目经历</h2>
+          <p class="section-sub">PROJECTS · 亲手把想法跑起来</p>
+        </header>
+
+        <div class="projects-grid">
+          <!-- 项目 1 -->
+          <article class="project-card reveal">
+            <div class="project-top">
+              <span class="project-year">2024</span>
+              <span class="project-index">壹</span>
+            </div>
+            <h3>本地大模型私有知识库</h3>
+            <p class="project-desc">
+              基于 Ollama + RAG 搭建本地知识库助手：文档离线问答、数据不出本机，解决隐私与成本痛点。
+              涉及向量检索、切片策略与提示词调优。
+            </p>
+            <ul class="project-tags">
+              <li>Ollama</li><li>RAG</li><li>Python</li>
+            </ul>
+          </article>
+
+          <!-- 项目 2 -->
+          <article class="project-card reveal">
+            <div class="project-top">
+              <span class="project-year">2024</span>
+              <span class="project-index">贰</span>
+            </div>
+            <h3>AI 演示文稿生成器</h3>
+            <p class="project-desc">
+              输入主题即可生成结构完整、版式规范的 PPT：大纲规划 → 逐页文案 → 样式套用，
+              把「做 PPT」从 3 小时压缩到 10 分钟。
+            </p>
+            <ul class="project-tags">
+              <li>LLM</li><li>PPT</li><li>自动化</li>
+            </ul>
+          </article>
+
+          <!-- 项目 3 -->
+          <article class="project-card reveal">
+            <div class="project-top">
+              <span class="project-year">2026</span>
+              <span class="project-index">叁</span>
+            </div>
+            <h3>个人网站 / 在线简历</h3>
+            <p class="project-desc">
+              就是你现在看到的这个站点：水墨中国风视觉 + 鼠标跟随水墨粒子 + 深浅主题切换，
+              纯 HTML / CSS / JS，零依赖快速加载。
+            </p>
+            <ul class="project-tags">
+              <li>HTML</li><li>CSS</li><li>Canvas</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 04 我能为你做什么 ============ -->
+    <section class="section section--alt" id="service">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-num">04</span>
+          <h2 class="section-title">我能为你做什么</h2>
+          <p class="section-sub">SERVICE · 不只是「我会什么」，更是「帮你把 AI 用起来」</p>
+        </header>
+
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <span class="service-emoji">🖥️</span>
+            <h3>本地部署开源大模型</h3>
+            <p>帮你在本地跑起开源模型，离线可用、数据私有；熟悉量化、推理加速与常用部署工具链。</p>
+            <code>Ollama · LM Studio · llama.cpp</code>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-emoji">⌨️</span>
+            <h3>AI Coding</h3>
+            <p>用 AI 帮你从需求到代码全流程提效：生成、重构、测试、解释，人机协作少走弯路。</p>
+            <code>Copilot · Cursor · 本地模型</code>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-emoji">📊</span>
+            <h3>演示文稿制作</h3>
+            <p>用 AI 帮你规划结构、生成文案与版式，做出逻辑清晰、视觉统一的 PPT。</p>
+            <code>结构规划 · 文案生成 · 版式</code>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-emoji">🌐</span>
+            <h3>个人网页制作</h3>
+            <p>从设计到上线，帮你独立完成响应式个人网站、简历站、作品集，注重加载速度与体验。</p>
+            <code>HTML · CSS · JS · 部署</code>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 05 证书 ============ -->
+    <section class="section" id="certs">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-num">05</span>
+          <h2 class="section-title">AI 应用相关证书</h2>
+          <p class="section-sub">CERTIFICATES · 持续补充中</p>
+        </header>
+
+        <div class="cert-grid">
+          <!-- 证书 1：高级（点击可查看大图） -->
+          <figure class="cert-figure reveal">
+            <a class="cert-img-link" href="assets/cert-ai-trainer-advanced.jpg" target="_blank" rel="noopener">
+              <img class="cert-img" src="assets/cert-ai-trainer-advanced.jpg" alt="人工智能训练师证书（高级）" loading="lazy" decoding="async" />
+            </a>
+            <figcaption class="cert-caption">
+              <span class="cert-org">达摩院</span>
+              <span class="cert-name">人工智能训练师（高级）</span>
+              <span class="cert-date">2026-07-23</span>
+            </figcaption>
+          </figure>
+
+          <!-- 证书 2：初级（点击可查看大图） -->
+          <figure class="cert-figure reveal">
+            <a class="cert-img-link" href="assets/cert-ai-trainer-junior.jpg" target="_blank" rel="noopener">
+              <img class="cert-img" src="assets/cert-ai-trainer-junior.jpg" alt="人工智能训练师证书（初级）" loading="lazy" decoding="async" />
+            </a>
+            <figcaption class="cert-caption">
+              <span class="cert-org">达摩院</span>
+              <span class="cert-name">人工智能训练师（初级）</span>
+              <span class="cert-date">2026-07-11</span>
+            </figcaption>
+          </figure>
+
+          <!-- 证书 3：持续补充中 -->
+          <figure class="cert-figure cert-figure--empty reveal">
+            <div class="cert-img-placeholder">
+              <span class="cert-dash" aria-hidden="true">——</span>
+            </div>
+            <figcaption class="cert-caption">
+              <span class="cert-name">持续补充中</span>
+              <span class="cert-date">更多证书陆续上传</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 06 特长 & 兴趣 ============ -->
+    <section class="section section--alt" id="hobby">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-num">06</span>
+          <h2 class="section-title">特长 &amp; 兴趣</h2>
+          <p class="section-sub">HOBBY · 保持输入，也热爱走出门去</p>
+        </header>
+
+        <blockquote class="hobby-quote reveal">
+          <p>Be humble.</p>
+          <p class="hobby-quote-cn">君子生非异也，善假于物也。</p>
+        </blockquote>
+
+        <ul class="hobby-tags reveal">
+          <li>🛠️ DIY 小手工</li>
+          <li>🎯 快速学习</li>
+          <li>🧩 拆解问题</li>
+          <li>🤖 AI 工具链</li>
+          <li>🎨 视觉与排版</li>
+          <li>🏃 跑步</li>
+          <li>🚴 骑行</li>
+          <li>🎮 独立游戏</li>
+          <li>📖 阅读</li>
+          <li>🗓️ 个人规划</li>
+          <li>💪 健身</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 页脚 ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">曾睿铭 <span>·</span> Zeng Rui Ming</p>
+      <p class="footer-meta">© 2026 · 用 HTML / CSS / JS 手写 · 零依赖 · 快速加载</p>
+      <a class="footer-seal" href="#top" aria-label="回到顶部">铭</a>
+    </div>
+  </footer>
+
+  <!-- 回到顶部按钮 -->
+  <button class="to-top" id="toTop" type="button" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <!-- 证书图片灯箱（单击打开 / 再点或点外部关闭 / 滚轮缩放） -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="证书大图查看" aria-hidden="true">
+    <div class="lightbox-stage" id="lightboxStage">
+      <img class="lightbox-img" id="lightboxImg" src="" alt="证书大图" />
+    </div>
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="关闭大图" aria-hidden="true">×</button>
+    <p class="lightbox-hint">滚轮缩放 · 点击图片或空白处关闭</p>
+  </div>
+
+  <!-- 脚本（置于底部，避免阻塞渲染） -->
+  <script src="js/main.js"></script>
+</body>
+</html>
